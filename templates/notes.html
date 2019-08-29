@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for note in notes %}
+
+        <!-- Grid row -->
+<div class="row">
+
+  <!-- Grid column -->
+  <div class="col-lg-4 col-md-12">
+
+    <!--Card-->
+    <div class="card">
+
+      <!--Card image-->
+      <div class="view">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Urval_av_de_bocker_som_har_vunnit_Nordiska_radets_litteraturpris_under_de_50_ar_som_priset_funnits_%282%29.jpg/220px-Urval_av_de_bocker_som_har_vunnit_Nordiska_radets_litteraturpris_under_de_50_ar_som_priset_funnits_%282%29.jpg" class="card-img-top"
+          alt="photo">
+        <a href="#">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+      <!--Card content-->
+      <div class="card-body">
+        <!--Title-->
+          <h3 class="card-title"><b>{{ note.NoteTitle }}</b></h3>
+        <!--Text-->
+        <h4 class="card-text"><strong>Lecturer's Name: {{ note.LecturerName }}</strong></h4>
+            <p class="card-text"><strong>Subject: {{ note.Subject }}</strong></p>
+           <h5 class="card-text">Comments: {{ note.Comments }}</h5>
+        <a href="{{ note.NoteUpload.url}}" class="btn btn-primary">Download Note</a>
+      </div>
+
+    </div>
+    <!--/.Card-->
+
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-lg-4 col-md-6">
+
+  </div>
+</div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for grade in grades %}
+
+        <!-- Grid row -->
+<div class="row">
+
+  <!-- Grid column -->
+  <div class="col-lg-4 col-md-12">
+
+    <!--Card-->
+    <div class="card">
+
+      <!--Card image-->
+      <div class="view">
+        <img src="https://training.cochrane.org/sites/training.cochrane.org/files/public/styles/feature_wide/public/uploads/feature_images/GRADE%20blue1_0.jpg?itok=PmxAdzXo" class="card-img-top"
+          alt="photo">
+        <a href="#">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+      <!--Card content-->
+      <div class="card-body">
+        <!--Title-->
+          <h3 class="card-title"><b>{{ grade.StudentName }}</b></h3>
+        <!--Text-->
+        <h4 class="card-text"><strong>Assignment: {{ grade.Assignment }}</strong></h4>
+            <p class="card-text"><strong>Subject: {{ grade.Subject }}</strong></p>
+           <p class="card-text"><strong>Mark: {{ grade.mark }}</strong></p>
+           <h5 class="card-text">Comments: {{ grade.Comments }}</h5>
+      </div>
+
+    </div>
+    <!--/.Card-->
+
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="col-lg-4 col-md-6">
+
+  </div>
+</div>
+    {% endfor %}
+{% endblock %}
